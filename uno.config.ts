@@ -15,13 +15,14 @@ export default defineConfig({
   presets: [
     presetWind3(),
     presetAttributify(),
-    presetTheme<Theme>({
+    // Using a direct type assertion to resolve the compatibility issue
+    (presetTheme({
       theme: {
         dark: {
           colors: dark,
         },
       },
-    }),
+    }) as any),
   ],
   theme: {
     colors: light,

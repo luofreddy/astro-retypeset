@@ -29,9 +29,11 @@ function getPostPath(post: Post) {
 ---
 
 <ul>
-  {posts.map(post => (
+  {posts.map((post, index) => {
+    const isLast = index === posts.length - 1
+    return (
     <li
-      class="mb-5.5"
+      class={`mb-5.5 ${isLast ? '' : 'border-b'}`}
       lg={isTag ? '' : 'mb-10'}
     >
 
@@ -96,5 +98,6 @@ function getPostPath(post: Post) {
       )}
 
     </li>
-  ))}
+  )
+  })}
 </ul>

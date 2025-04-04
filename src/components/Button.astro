@@ -15,7 +15,7 @@ const isPost = isPostPage(currentPath)
 const isTag = isTagPage(currentPath)
 
 // Check if there are other languages to switch
-const showLanguageSwitcher = moreLocales.length > 0
+const showLanguageSwitcher = moreLocales.length > 1
 // Check if only the supported language switch list is used
 const useSupportedLangs = isPost || (isTag && supportedLangs.length > 0)
 // Choose a language switch list according to the page type

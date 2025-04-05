@@ -1,4 +1,3 @@
-import cloudflare from '@astrojs/cloudflare'
 import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
@@ -21,8 +20,6 @@ const linkPrefetch = themeConfig.preload.linkPrefetch
 const imageDomain = new URL(themeConfig.preload.imageHostURL as string).hostname
 
 export default defineConfig({
-  output: 'server',
-  adapter: cloudflare(),
   site: url,
   base: '/',
   trailingSlash: 'always',

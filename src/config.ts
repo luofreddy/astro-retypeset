@@ -14,7 +14,7 @@ export const themeConfig: ThemeConfig = {
     // author name
     author: 'Freddy Luo',
     // site url
-    url: 'https://console.log-f.com',
+    url: 'https://blog.freddyluo.com',
     // favicon url
     // recommended formats: svg, png or ico
     favicon: '/icon/favicon.webp', // or https://example.com/favicon.svg
@@ -166,7 +166,7 @@ export const themeConfig: ThemeConfig = {
     // comment server url
     commentURL: '',
     // image hosting url
-    imageHostURL: '',
+    imageHostURL: 'https://blog.freddyluo.com/',
     // custom google analytics js
     // for users who route analytics javascript to a customized domain
     // See https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738

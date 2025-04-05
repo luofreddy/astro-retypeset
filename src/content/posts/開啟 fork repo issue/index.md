@@ -4,9 +4,8 @@ abbrlink: github-fork-issue
 tags:
   - Github
 description: 要在我 fork 來的 blog repo 加上 gittalk 功能時才發現 fork 來的 repo 預設的 issue 都是關閉的。此時只要到 repo setting 的 General 往下找到 issue 然後將它勾選起來
+title: 開啟 fork repo issue
 ---
-
-# 開啟 fork repo issue
 
 筆記一下
 

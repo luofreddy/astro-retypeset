@@ -1,3 +1,4 @@
+import cloudflare from '@astrojs/cloudflare'
 import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
@@ -11,6 +12,7 @@ import remarkMath from 'remark-math'
 import UnoCSS from 'unocss/astro'
 import { themeConfig } from './src/config'
 import { langMap } from './src/i18n/config'
+
 import { remarkReadingTime } from './src/plugins/remark-reading-time'
 
 const url = themeConfig.site.url
@@ -19,17 +21,22 @@ const linkPrefetch = themeConfig.preload.linkPrefetch
 const imageDomain = new URL(themeConfig.preload.imageHostURL as string).hostname
 
 export default defineConfig({
+  output: 'server',
+  adapter: cloudflare(),
   site: url,
   base: '/',
   trailingSlash: 'always',
+
   prefetch: {
     prefetchAll: true,
     defaultStrategy: linkPrefetch,
   },
+
   image: {
     domains: [imageDomain],
     remotePatterns: [{ protocol: 'https' }],
   },
+
   i18n: {
     locales: Object.entries(langMap).map(([path, codes]) => ({
       path,
@@ -37,6 +44,7 @@ export default defineConfig({
     })),
     defaultLocale: locale,
   },
+
   integrations: [
     UnoCSS({
       injectReset: true,
@@ -51,6 +59,7 @@ export default defineConfig({
     robotsTxt(),
     compress(),
   ],
+
   markdown: {
     remarkPlugins: [
       remarkMath,
@@ -76,7 +85,10 @@ export default defineConfig({
       },
     },
   },
+
   devToolbar: {
     enabled: false,
   },
+
+  adapter: cloudflare(),
 })

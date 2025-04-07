@@ -8,13 +8,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions: # 官方 Action 可能需要部署權限
+      contents: read
+      deployments: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # 建議使用較新版本
+
+      - name: Build project # 如果你的專案需要建置步驟 (例如 npm run build)
+        run: |
+          # npm install # 或 yarn install, pnpm install
+          # npm run build # 或你的建置指令
+        # 如果你的專案不需要建置 (例如純靜態 HTML)，可以省略此步驟
 
       - name: Deploy to Cloudflare Pages
-        uses: tomjschuster/cloudflare-pages-deploy-action@latest
+        uses: cloudflare/pages-action@v1 # 使用官方 Action
         with:
-          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          project-name: astro-retypeset
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} # 官方 Action 通常用 camelCase
+          projectName: astro-retypeset # 官方 Action 通常用 camelCase
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }} # 官方 Action 通常用 camelCase
+          # branch: main # 如果你只部署特定分支，可以指定。部署 tag 通常不需要指定 branch。
+          directory: dist # 或者你的建置輸出目錄 (例如 public, build, .output/public 等)
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }} # 通常會自動處理，但有時需要明確指定

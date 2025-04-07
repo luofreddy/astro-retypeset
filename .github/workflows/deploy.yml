@@ -37,7 +37,7 @@ jobs:
       - name: Deploy Worker # Renamed for clarity from "Build & Deploy Worker"
         uses: cloudflare/wrangler-action@v3
         with:
-#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-#           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-#           # You might need to explicitly add the command if the action doesn't infer it
-#           # command: deploy # or 'pages deploy' if it's a Pages project needing a build dir
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # You might need to explicitly add the command if the action doesn't infer it
+          # command: deploy # or 'pages deploy' if it's a Pages project needing a build dir

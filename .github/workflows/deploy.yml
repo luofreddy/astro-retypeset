@@ -44,8 +44,9 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    runs-on: ubuntu-latest
     steps:
-      uses: cloudflare/wrangler-action@v3
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Checkout Code
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

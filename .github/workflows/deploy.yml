@@ -1,18 +1,43 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare Pages/Workers # Clarified name slightly
 
 on:
   push:
     tags:
-      - '*' # 監聽所有的 tag push
+      - '*' # Trigger on all tag pushes
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - name: Build & Deploy Worker
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # --- Added Steps ---
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          # IMPORTANT: Replace '18' with the Node.js version your project requires
+          node-version: '18'
+          # Cache Yarn dependencies for faster subsequent runs
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+        # --frozen-lockfile ensures you use exact versions from yarn.lock, crucial for CI
+
+      # --- Optional Build Step ---
+      # If your project requires a build step before deploying (most do), uncomment this.
+      # Make sure your build script is named 'build' in your package.json,
+      # or change the command accordingly (e.g., yarn compile, yarn bundle).
+      # - name: Build Project
+      #   run: yarn build
+      # --------------------------
+
+      - name: Deploy Worker # Renamed for clarity from "Build & Deploy Worker"
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # You might need to explicitly add the command if the action doesn't infer it
+          # command: deploy # or 'pages deploy' if it's a Pages project needing a build dir

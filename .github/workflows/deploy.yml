@@ -15,6 +15,6 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: tomjschuster/cloudflare-pages-deploy-action@latest
         with:
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          projectName: astro-retypeset
+          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          project-name: astro-retypeset

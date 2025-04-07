@@ -30,8 +30,8 @@ jobs:
       # If your project requires a build step before deploying (most do), uncomment this.
       # Make sure your build script is named 'build' in your package.json,
       # or change the command accordingly (e.g., yarn compile, yarn bundle).
-      # - name: Build Project
-      #   run: yarn build
+      - name: Build Project
+        run: yarn build
       # --------------------------
 
       - name: Deploy Worker # Renamed for clarity from "Build & Deploy Worker"

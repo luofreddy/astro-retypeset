@@ -27,6 +27,3 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} # 官方 Action 通常用 camelCase
           projectName: astro-retypeset # 官方 Action 通常用 camelCase
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }} # 官方 Action 通常用 camelCase
-          # branch: main # 如果你只部署特定分支，可以指定。部署 tag 通常不需要指定 branch。
-          directory: dist # 或者你的建置輸出目錄 (例如 public, build, .output/public 等)
-          # gitHubToken: ${{ secrets.GITHUB_TOKEN }} # 通常會自動處理，但有時需要明確指定

@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # IMPORTANT: Replace '18' with the Node.js version your project requires
-          node-version: '18'
+          node-version: '20'
           # Cache Yarn dependencies for faster subsequent runs
           cache: yarn
 

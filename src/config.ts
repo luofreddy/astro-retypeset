@@ -6,7 +6,7 @@ export const themeConfig: ThemeConfig = {
     // site title
     title: 'Console.log(F)',
     // site subtitle
-    subtitle: '',
+    subtitle: 'F\'s output practice',
     // site description
     description: '這個網站是一位小小工程師Ｆ用來練習輸出的地方，主要內容會包括書籍分享及技術筆記，希望這裡留下的東西也可以幫助到他人',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above

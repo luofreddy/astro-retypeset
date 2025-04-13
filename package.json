@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "g:post": "npx cfft -t post"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.4.0",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
     "@astrojs/check": "^0.9.4",
+    "@beezydev/create-files-from-template-cli": "^1.8.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.14.0",
     "@types/sanitize-html": "^2.15.0",

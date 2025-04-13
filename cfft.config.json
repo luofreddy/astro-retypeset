@@ -1,0 +1,17 @@
+{
+  "$schema": "https://dus4nstojanovic.github.io/create-files-from-template-base/cfft.config-schema.json",
+  "defaultTemplateName": "post",
+  "templates": [
+    {
+      "name": "post",
+      "options": {
+        "templatePath": "/.cfft.templates/post",
+        "dirPath": "./src/content/posts/{fileName}",
+        "fileNameTextToBeReplaced": "postName",
+        "searchAndReplace": [
+          { "search": "PostName", "replace": "{fileName}" }
+        ]
+      }
+    }
+  ]
+}

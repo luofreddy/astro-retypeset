@@ -262,6 +262,11 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
+"@beezydev/create-files-from-template-cli@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@beezydev/create-files-from-template-cli/-/create-files-from-template-cli-1.8.0.tgz#98198340bc1b764a3a577f4cacf0b29028620547"
+  integrity sha512-Bc7su30Zex1nmQOEtnMPtHyVaEV1BzWFmNO3O0bjUyemy9rIWKhNkiv7C7X7C+0Td6fF7CB5D6keSeGdUtk/OQ==
+
 "@clack/core@0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@clack/core/-/core-0.4.1.tgz#36c8aed3f4904060a39275817e804e7a8ffb7e1c"

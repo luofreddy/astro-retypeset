@@ -100,7 +100,7 @@ export const themeConfig: ThemeConfig = {
     verification: {
       // google search console
       // https://search.google.com/search-console
-      google: '',
+      google: 'oYpt9egA-dCm0zNhSP9RFhocfc2cQpWK2TiVoOg-URY',
       // bing webmaster tools
       // https://www.bing.com/webmasters
       bing: '',

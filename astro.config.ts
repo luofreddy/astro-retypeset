@@ -14,6 +14,8 @@ import { langMap } from './src/i18n/config'
 
 import { remarkReadingTime } from './src/plugins/remark-reading-time'
 
+import react from '@astrojs/react';
+
 const url = themeConfig.site.url
 const locale = themeConfig.global.locale
 const linkPrefetch = themeConfig.preload.linkPrefetch
@@ -42,20 +44,13 @@ export default defineConfig({
     defaultLocale: locale,
   },
 
-  integrations: [
-    UnoCSS({
-      injectReset: true,
-    }),
-    mdx(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-    sitemap(),
-    robotsTxt(),
-    compress(),
-  ],
+  integrations: [UnoCSS({
+    injectReset: true,
+  }), mdx(), partytown({
+    config: {
+      forward: ['dataLayer.push'],
+    },
+  }), sitemap(), robotsTxt(), compress(), react()],
 
   markdown: {
     remarkPlugins: [

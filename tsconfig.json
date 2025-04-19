@@ -1,10 +1,17 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "allowJs": true
   },
@@ -12,7 +19,10 @@
     "src/**/*.ts",
     "src/**/*.astro",
     "uno.config.ts",
-    "astro.config.ts"
+    "astro.config.ts",
+    "src/components/Comments/Giscus.tsx"
   ],
-  "exclude": ["dist"]
+  "exclude": [
+    "dist"
+  ]
 }

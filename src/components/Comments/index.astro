@@ -2,6 +2,7 @@
 // import Disqus from '@/components/Comments/Disqus.astro'
 // import Giscus from '@/components/Comments/Giscus.astro'
 // import Twikoo from '@/components/Comments/Twikoo.astro'
+import Comment from '@/components/Comments/Comment.tsx'
 import Waline from '@/components/Comments/Waline.astro'
 import { themeConfig } from '@/config'
 
@@ -23,7 +24,7 @@ const enableComments = themeConfig.comment?.enabled ?? false
 const walineURL = themeConfig.comment?.waline?.serverURL || ''
 const showWaline = enableComments && walineURL.trim() !== ''
 ---
-
+<Comment client:only="react" />
 <!-- {showDisqus && <Disqus />} -->
 <!-- {showGiscus && <Giscus />} -->
 <!-- {showTwikoo && <Twikoo />} -->

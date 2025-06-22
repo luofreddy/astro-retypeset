@@ -53,7 +53,7 @@ targetWindow.postMessage(message, targetOrigin, [transfer])
 
 ### 使用 Transfer
 當使用了 Transfer 參數的時候就可以做到所有權的轉移，可以指定 message 物件中的特定資料不該用複製的而是直接移交所有權，這樣一來此物件的所有權就會交到接收方的執行緒，就不需要建立副本給接收方，但除此之外還有幾點：
-1. 傳送方會失去所有權，所以傳送方如果調用 Transfer 的物件操作寫入時會得到 Error。
+1. 傳送方會失去所有權，所以傳送方如果調用 Transfer 進行存取數據的操作時會得到 Error。
 
 (可以透過 [codeSandbox](https://8s8mzf.csb.app/transfer-test/index.html) 測試)
 ![use transfer method error](./transfer-error.gif)
